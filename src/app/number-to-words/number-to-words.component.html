@@ -1,0 +1,19 @@
+
+   <div class = "container">
+    <div class="content">
+      <h1>Currency Conversion</h1>
+      <div class="error-message" *ngIf="!validAmountFormat">* Invalid amount format. Please enter cent amount or remove ,</div>
+        <div *ngIf="amount.invalid && (amount.dirty || amount.touched)" class="error-message">
+          <div *ngIf="amount.hasError('required')" class="error bold"> * Amount is required.</div>
+          <div *ngIf="amount.hasError('invalidAmount') && !amount.hasError('required')">* Invalid amount format. Please enter valid amount</div>
+          <div *ngIf="amount.hasError('maxLength') && amount.errors != null && amount.errors['maxLength'] != null">* {{ amount.errors['maxLength'] }}</div>
+        </div>
+        <label for="amount">Please enter the  dollar amount</label>
+        <input type="text"  (input)="onAmountChange()" [formControl]="amount">
+        
+        <button type="submit" (click)="onSubmit()">Submit</button> 
+      <div *ngIf="convertedAmount" class="result">
+        <b>Amount in words: {{ convertedAmount }}</b>
+      </div>
+    </div>
+  </div>

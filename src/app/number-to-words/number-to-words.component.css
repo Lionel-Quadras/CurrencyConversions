@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+     background-color: blue; 
+  }
+  
+  .content {
+    text-align: center;
+    color: black;
+  }
+  
+  form {
+    margin-bottom: 20px;
+  }
+  
+  .result {
+    margin-top: 20px;
+  }
+
+  .error-message {
+    color: red !important;;
+  }
+  
+  .bold {
+    font-weight: bold;
+  }
